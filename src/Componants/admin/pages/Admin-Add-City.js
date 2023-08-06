@@ -51,8 +51,8 @@ export default function AdminAddCity() {
 
                     <Container fluid="true" id='admin-content'>
                         {/* Add Slider */}
-                        <Container fluid="true" className='mb-5' id='add-city' >
-                            <Col className='my-3'>
+                        <Container fluid="true" className='pb-5 bg-dark text-white' id='add-city' >
+                            <Col className='py-3'>
                                 <h1 className='text-center pt-1'>Add City</h1>
                                 <hr className='border border-2 border-info w-25 mx-auto' />
                             </Col>
@@ -78,7 +78,7 @@ export default function AdminAddCity() {
                                             required
                                         />
                                     </Form.Group>
-                                    <Button type='button' variant='outline-primary ' className='px-3 mt-3 w-25 ms-2' onClick={Addcity}>Add City</Button>
+                                    <Button type='button' variant='outline-primary ' className='px-3 mt-4 w-25' onClick={Addcity}>Add City</Button>
                                 </Form>
 
                             </Container>

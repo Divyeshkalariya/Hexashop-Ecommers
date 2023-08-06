@@ -101,9 +101,6 @@ body {
     }
 }
 
-/* .category{
-    height: 150% !important;
-} */
 .category-list {
     overflow-y: auto;
 }
@@ -154,8 +151,12 @@ body {
 
 /* ADMIN-CONTET */
 #admin-content {
-    margin-top: 5rem;
+    margin-top: 4.5rem;
     overflow-x: hidden;
+}
+
+#admin-content .counting {
+    background-color: rgba(255, 255, 255, 0.205);
 }
 
 .fa-pencil,
@@ -192,9 +193,10 @@ body {
     padding: 1%;
 }
 
-.datatable .datatable-body tr:hover{
-    background-color:lightblue !important;    
+.datatable .datatable-body tr:hover {
+    background-color: lightblue !important;
 }
+
 .datatable .action {
     cursor: pointer;
 }
@@ -208,13 +210,33 @@ body {
 #manage-contact {
     position: relative !important;
 }
+
 #addcity {
-    height:100% !important;
+    height: 100% !important;
 }
-#addcity #admin-footer{
+
+#addcity #admin-footer {
     position: absolute;
     bottom: 0 !important;
 }
+
+/* ADMIN-ADD STATE */
+#add-state,
+#add-city,
+#update-city,
+#update-state,
+#update-footer {
+    height: 80.9vh;
+}
+#update-footer {
+    height: 88.6vh;
+}
+#update-footer #admin-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 
 /* ADMIN-MANAGE-FOOTER */
 #manage-footer,

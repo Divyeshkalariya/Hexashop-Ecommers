@@ -6,7 +6,7 @@ const HomeSlider = () => {
 
     // SLIDER
     const settings = {
-        dots: true,
+        // dots: true,
         infinite: true,
         autoplay: true,
         speed: 1000,

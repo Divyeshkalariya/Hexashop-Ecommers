@@ -19,7 +19,7 @@ export default function AdminFooter() {
       {footer.map((item) => {
         return(
         <Container fluid="true" id='admin-footer' className='admin-Footer p-3 text-center' key={item.id}>
-          <h6 className='p-0 m-0'>Copyright &copy; {item.yearfrom} - {item.yearto} All rights are reserved </h6>
+          <h6 className='p-0 m-0'>Copyright &copy; {item.yearfrom} - {item.yearto} by Hexashop &nbsp; || &nbsp; All rights are reserved </h6>
         </Container>
         )
       })}

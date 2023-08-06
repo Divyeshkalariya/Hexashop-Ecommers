@@ -3,29 +3,6 @@ import { Container } from 'react-bootstrap';
 import Slider from "react-slick";
 import axios from 'axios';
 
-
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "block" }}
-            onClick={onClick}
-        />
-    );
-}
-
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "block" }}
-            onClick={onClick}
-        />
-    );
-}
-
 export default function Womenproductslider() {
 
     // slick slider 
@@ -35,8 +12,6 @@ export default function Womenproductslider() {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
         responsive: [
             {
                 breakpoint: 1024,
@@ -65,7 +40,6 @@ export default function Womenproductslider() {
     }
 
     const [womendata , setWomendata] = useState ([])
-
     useEffect(() => {
         axios.get("http://localhost:2602/Womensliderdata")
             .then((response) => {

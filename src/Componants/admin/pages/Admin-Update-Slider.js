@@ -54,9 +54,9 @@ export default function AdminUpdateSlider() {
 
                     <Container fluid="true" id='admin-content'>
                         {/* Add Slider */}
-                        <Container fluid="true" className='mb-5' id='add-slider' >
-                            <Col className='my-3'>
-                                <h1 className='text-center pt-1'>Add Slide</h1>
+                        <Container fluid="true" className='pb-5 bg-dark text-white' id='Update-slider' >
+                            <Col className='py-3'>
+                                <h1 className='text-center pt-1'>Update Slide</h1>
                                 <hr className='border border-2 border-info w-25 mx-auto' />
                             </Col>
                             <Container className='w-75 mb-4'>
@@ -72,7 +72,7 @@ export default function AdminUpdateSlider() {
                                         />
                                     </Form.Group>
 
-                                    <Form.Group className='mt-3'>
+                                    <Form.Group className='mt-4'>
                                         <Form.Label className='m-0'>Slide Title</Form.Label>
                                         <Form.Control type="text"
                                             className="p-2 "
@@ -82,7 +82,7 @@ export default function AdminUpdateSlider() {
                                         />
                                     </Form.Group>
 
-                                    <Form.Group className='mt-3'>
+                                    <Form.Group className='mt-4'>
                                         <Form.Label className='m-0'>Slide SubTitle</Form.Label>
                                         <Form.Control type="text"
                                             className="p-2 "
@@ -92,7 +92,7 @@ export default function AdminUpdateSlider() {
                                         />
                                     </Form.Group>
 
-                                    <Button type='button' variant='outline-success ' className='px-3 mt-3 w-25' onClick={Updateslide} >Update State</Button>
+                                    <Button type='button' variant='outline-success ' className='px-3 mt-4 w-25' onClick={Updateslide} >Update State</Button>
                                 </Form>
 
                             </Container>

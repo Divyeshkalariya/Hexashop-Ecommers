@@ -1,25 +1,25 @@
-import React, { Fragment,useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import Footre from '../Footre'
 import { Container, Col, Row } from 'react-bootstrap'
 
 export default function Help() {
 
     const [visible, setVisible] = useState(false)
-        
+
     const toggleVisible = () => {
-      const scrolled = document.documentElement.scrollTop;
-      if (scrolled > 300){
-        setVisible(true)
-      } 
-      else if (scrolled <= 300){
-        setVisible(false)
-      }
+        const scrolled = document.documentElement.scrollTop;
+        if (scrolled > 300) {
+            setVisible(true)
+        }
+        else if (scrolled <= 300) {
+            setVisible(false)
+        }
     };
-    const scrollToTop = () =>{
-      window.scrollTo({
-        top: 0, 
-        behavior: 'smooth'
-      });
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     };
     window.addEventListener('scroll', toggleVisible);
 
@@ -29,7 +29,7 @@ export default function Help() {
             <Container id='help'>
                 <Col className="pt-4">
                     <h1 className='text-center'>How Can We Help You ?</h1>
-                    <p className='text-center'>Just one small positive thought in the morning can change your whole day.</p>
+                    <p className='text-center'>If you have any question or help contact with us by given ways below</p>
                 </Col>
                 <Container>
                     <Row className='g-5 p-5'>

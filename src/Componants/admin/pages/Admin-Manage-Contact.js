@@ -108,7 +108,7 @@ export default function AdminManageContact() {
 
               {/* Data-table */}
 
-              <DataTable style={{width:"100%"}} columns={columns} data={filtercontact}
+              <DataTable style={{ width: "100%" }} columns={columns} data={filtercontact}
                 // title="Contacts data"
                 pagination
                 fixedHeader

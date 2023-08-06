@@ -47,9 +47,9 @@ export default function AdminUpdateFooter() {
 
                     <Container fluid="true" id="admin-content">
                         {/* manage footer */}
-                        <Container fluid="true" id='manage-footer'>
+                        <Container fluid="true" id='update-footer' className='bg-dark text-white'>
                             <Col>
-                                <h1 className='text-center my-3'>Manage Footer</h1>
+                                <h1 className='text-center py-3'>Update Footer</h1>
                                 <hr className='border border-2 border-info w-25 mx-auto' />
                             </Col>
 

@@ -57,16 +57,16 @@ export default function AdminUpdateCategory() {
 
                     <Container fluid="true" id="admin-content">
                         {/* add category */}
-                        <Container fluid="true" id='admin-add-category'>
-                            <Col>
+                        <Container fluid="true" id='admin-add-category' className='bg-dark text-white'>
+                            <Col className='py-2'>
                                 <h1 className='text-center pt-1'>Update category</h1>
                                 <hr className='border border-2 border-info w-25 mx-auto' />
                             </Col>
 
-                            <Container className='w-75 mb-4' id='add-category'>
+                            <Container className='w-75 pb-1' id='add-category'>
                                 <Form>
                                     <Row className="mb-3">
-                                        <div className='mt-4'>
+                                        <div className='mt-3'>
                                             <label className='text-primary'>Update Category Name</label>
                                             <input
                                                 type="text"
@@ -75,7 +75,7 @@ export default function AdminUpdateCategory() {
                                                 className='form-control mt-1'
                                             />
                                         </div>
-                                        <div className='mt-4'>
+                                        <div className='mt-3'>
                                             <label className='text-primary'>Date</label>
                                             <input
                                                 type="date"
@@ -83,7 +83,7 @@ export default function AdminUpdateCategory() {
                                                 className='form-control mt-1'
                                             />
                                         </div>
-                                        <div className='mt-4'>
+                                        <div className='mt-3'>
                                             <label className='text-primary'>Category Descriptions</label>
                                             <textarea
                                                 rows={4}
@@ -93,7 +93,7 @@ export default function AdminUpdateCategory() {
                                             ></textarea>
                                         </div>
 
-                                        <Button type="button" variant='outline-success' className='mt-4 w-25 ms-2' onClick={UpdateCategory}>Update Category</Button>
+                                        <Button type="button" variant='outline-success' className='mt-4 w-25 ms-3' onClick={UpdateCategory}>Update Category</Button>
                                     </Row>
                                 </Form>
                             </Container>

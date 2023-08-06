@@ -61,8 +61,8 @@ export default function AdminUpdateCity() {
 
                     <Container fluid="true" id='admin-content'>
                         {/* Add Slider */}
-                        <Container fluid="true" className='mb-5' id='add-slider' >
-                            <Col className='my-3'>
+                        <Container fluid="true" className='pb-5 bg-dark text-white' id='update-city' >
+                            <Col className='py-3'>
                                 <h1 className='text-center pt-1'>Update City</h1>
                                 <hr className='border border-2 border-info w-25 mx-auto' />
                             </Col>
@@ -88,7 +88,7 @@ export default function AdminUpdateCity() {
                                             required
                                         />
                                     </Form.Group>
-                                    <Button type='button' variant='outline-success' className='px-3 mt-3 w-25' onClick={Updatecity}>Update City</Button>
+                                    <Button type='button' variant='outline-success' className='px-3 mt-4 w-25' onClick={Updatecity}>Update City</Button>
                                 </Form>
 
                             </Container>

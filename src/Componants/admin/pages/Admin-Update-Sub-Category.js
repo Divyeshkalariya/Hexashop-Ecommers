@@ -66,22 +66,23 @@ export default function AdminUpdateSubCategory() {
 
                     <Container fluid="true" id="admin-content">
                         {/* add category */}
-                        <Container fluid="true" id='add-category'>
-                            <Col>
+                        <Container fluid="true" id='update-subcategory' className='bg-dark text-white'>
+                            <Col className='pt-3'>
                                 <h1 className='text-center pt-1'>Update sub-category</h1>
                                 <hr className='border border-2 border-info w-25 mx-auto' />
                             </Col>
 
                             <Form>
-                                <Row className="mb-3 w-75 mx-auto">
+                                <Row className="pb-3 w-75 mx-auto">
                                     <div className='mt-4' >
                                         <label className='text-primary'>Select Category</label>
                                         <select
                                             type="text"
-                                            className='form-control mt-1'
+                                            className='form-control mt-1 text-black'
                                             ref={categoryname}
+                                            style={{color:"black"}}
                                         >
-                                            <option>- Select Category -</option>
+                                            <option> - Select Category -</option>
                                             {addcategory && addcategory.map((row) => {
                                                 return (
                                                     <option value={row.categoryname} key={row.id}>{row.categoryname}</option>

@@ -1,8 +1,21 @@
-import React, { Fragment } from 'react';
+import axios from 'axios';
+import React, { Fragment,useState,useEffect } from 'react';
 import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 export default function AdminHeader() {
+
+  // GET CONTACT LENGTH
+  const [contact , setContact] = useState([])
+  const Navigate = useNavigate("");
+
+  useEffect( () => {
+    axios.get("http://localhost:2602/Contactusdata")
+      .then((res)=>{
+        setContact(res.data)
+      })
+  },[])
+
   return (
     <Fragment>
       <Container fluid="true" id='admin-header' className='admin-header p-2 text-center'>
@@ -23,10 +36,10 @@ export default function AdminHeader() {
               <i className='fa fa-question-circle fs-4'></i> 
             </Button>
 
-            <Button className='bg-transparent border-0'>
+            <Button className='bg-transparent border-0' onClick={()=> Navigate("/admin-login/admin-manage-contact")}>
               <i className='fa fa-envelope fs-4'></i> 
             </Button>
-            <Badge className='translate-middle p-1'>0</Badge>
+            <Badge className='translate-middle p-1'>{contact.length}</Badge>
           </div>
 
           </Col>

@@ -27,7 +27,7 @@
   ],
   "Mensliderdata": [
     {
-      "id": 0,
+      "id": 1,
       "productname": "Classic Spring",
       "productaddedate": "2023-07-25",
       "productoffer": " 3499",
@@ -36,7 +36,7 @@
       "productdiscraption": "best cloths for men"
     },
     {
-      "id": 1,
+      "id": 2,
       "productname": "Classic Stome",
       "productaddedate": "2023-07-25",
       "productoffer": " 1900",
@@ -45,7 +45,7 @@
       "productdiscraption": "best cloths for men"
     },
     {
-      "id": 2,
+      "id": 3,
       "productname": "Air Force 1 X",
       "productaddedate": "2023-07-25",
       "productoffer": " 2499",
@@ -54,7 +54,7 @@
       "productdiscraption": "best cloths for men"
     },
     {
-      "id": 3,
+      "id": 4,
       "productname": "Love Nani ' 20",
       "productaddedate": "2023-07-25",
       "productoffer": " 999",
@@ -63,7 +63,7 @@
       "productdiscraption": "best cloths for men"
     },
     {
-      "id": 4,
+      "id": 5,
       "productname": "Lost Stack",
       "productaddedate": "2023-07-25",
       "productoffer": " 1299",
@@ -72,7 +72,7 @@
       "productdiscraption": "best cloths for men"
     },
     {
-      "id": 5,
+      "id": 6,
       "productname": "Classy Style",
       "productaddedate": "2023-07-25",
       "productoffer": " 1799",
@@ -446,6 +446,11 @@
       "state": "Rajesthan",
       "city": "Jaipur",
       "id": 7
+    },
+    {
+      "state": "Gujarat",
+      "city": "Vadodara",
+      "id": 8
     }
   ],
   "Accountdata": [
@@ -613,6 +618,61 @@
       "dateofbirth": "1997-01-03",
       "gender": "male",
       "id": 15
+    },
+    {
+      "username": "chiku",
+      "email": "chiku23@gmail.com",
+      "password": "chi5345",
+      "confirmpassword": "chi5345",
+      "dateofbirth": "1997-04-12",
+      "state": "gujarat",
+      "city": "Junagadh",
+      "gender": "female",
+      "id": 16
+    },
+    {
+      "username": "pinkal",
+      "email": "pinkal76@gmail.com",
+      "password": "pinku357",
+      "confirmpassword": "pinku357",
+      "dateofbirth": "2001-07-12",
+      "gender": "female",
+      "state": "gujarat",
+      "city": "Vadodara",
+      "id": 17
+    },
+    {
+      "username": "miral",
+      "email": "miral989@gmail.com",
+      "password": "miral989",
+      "confirmpassword": "miral989",
+      "dateofbirth": "1999-11-26",
+      "gender": "female",
+      "state": "gujarat",
+      "city": "Junagadh",
+      "id": 18
+    },
+    {
+      "username": "komal",
+      "email": "komu290@gmail.com",
+      "password": "komu290",
+      "confirmpassword": "komu290",
+      "dateofbirth": "2003-04-16",
+      "gender": "female",
+      "state": "Rajesthan",
+      "city": "Nathdwar",
+      "id": 19
+    },
+    {
+      "username": "jay",
+      "email": "jya786@gmail.com",
+      "password": "jya786",
+      "confirmpassword": "jya786",
+      "dateofbirth": "1994-05-30",
+      "gender": "male",
+      "state": "Delhi",
+      "city": "Delhi",
+      "id": 20
     }
   ],
   "Footer": [
@@ -758,12 +818,12 @@
   "AddProducts": [
     {
       "addcategoriename": "Mens",
-      "addsubcategoriename": "All sesion",
+      "addsubcategoriename": "All Sesason",
       "productname": "Classic Spring",
       "productimg": "https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVucyUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D&w=1000&q=80",
       "productqut": "1",
       "productprice": "6999",
-      "productoffer": " 3499",
+      "productoffer": "",
       "productaddedate": "2023-07-25",
       "productdescriptions": "best cloths for men Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore labore, recusandae reprehenderit voluptate reiciendis qui ipsa consectetur illo animi corporis repellat rerum. Deserunt debitis, non pariatur cupiditate magnam consectetur atque?",
       "id": 1
@@ -1595,6 +1655,18 @@
       "productaddedate": "2023-07-26",
       "productdescriptions": "Hand Wash Only❥Great for homewear, daily, casual look, lounge wear, party, hang out with friends, dating, school, holiday, travel, vacation, office Women Fit and Flare Red Dress. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore labore, recusandae reprehenderit voluptate reiciendis qui ipsa consectetur illo animi corporis repellat rerum. Deserunt debitis, non pariatur cupiditate magnam consectetur atque?",
       "id": 20
+    },
+    {
+      "addcategoriename": "Mens",
+      "addsubcategoriename": "All sesion",
+      "productname": "Classic Stome",
+      "productimg": "https://www.universityoffashion.com/blog/wp-content/uploads/2021/07/A-look-from-Brionis-Spring-2022-Collection.-Photo-Credit-Brioni.-scaled.jpg",
+      "productqut": "1",
+      "productprice": "3799",
+      "productoffer": " 1900",
+      "productaddedate": "2023-07-25",
+      "productdescriptions": "best cloths for men Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore labore, recusandae reprehenderit voluptate reiciendis qui ipsa consectetur illo animi corporis repellat rerum. Deserunt debitis, non pariatur cupiditate magnam consectetur atque?",
+      "id": 2
     }
   ],
   "Cart": [
@@ -1660,15 +1732,15 @@
     },
     {
       "addcategoriename": "Mens",
-      "addsubcategoriename": "Wedding Cloths",
-      "productname": "Halidi Kurta",
-      "productimg": "https://rukminim2.flixcart.com/image/832/832/xif0q/ethnic-set/t/t/l/l-bk-502-flossy-original-imagpnjh5uxxwnpp.jpeg?q=70",
+      "addsubcategoriename": "All sesion",
+      "productname": "Classic Stome",
+      "productimg": "https://www.universityoffashion.com/blog/wp-content/uploads/2021/07/A-look-from-Brionis-Spring-2022-Collection.-Photo-Credit-Brioni.-scaled.jpg",
       "productqut": "1",
-      "productprice": "1999",
-      "productoffer": "1055",
+      "productprice": "3799",
+      "productoffer": " 1900",
       "productaddedate": "2023-07-25",
-      "productdescriptions": "Cheap wedding Men's Warm Large Size Parka Outerwear Fur Lined Long Fleece Thickening Hooded Men Cotton Blend Kurta and Pyjama Set. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore labore, recusandae reprehenderit voluptate reiciendis qui ipsa consectetur illo animi corporis repellat rerum. Deserunt debitis, non pariatur cupiditate magnam consectetur atque?",
-      "id": 17
+      "productdescriptions": "best cloths for men Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore labore, recusandae reprehenderit voluptate reiciendis qui ipsa consectetur illo animi corporis repellat rerum. Deserunt debitis, non pariatur cupiditate magnam consectetur atque?",
+      "id": 2
     }
   ]
 }

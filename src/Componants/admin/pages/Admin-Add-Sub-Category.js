@@ -54,14 +54,14 @@ export default function AdminAddSubCategory() {
 
                     <Container fluid="true" id="admin-content">
                         {/* add category */}
-                        <Container fluid="true" id='add-category'>
-                            <Col className='my-3'>
+                        <Container fluid="true" id='add-category' className='bg-dark text-white'>
+                            <Col className='py-3'>
                                 <h1 className='text-center pt-1'>Add Sub-Category</h1>
                                 <hr className='border border-2 border-info w-25 mx-auto' />
                             </Col>
 
                             <Form>
-                                <Row className="mb-3 w-75 mx-auto">
+                                <Row className="pb-3 w-75 mx-auto">
                                     <div className='mt-4' >
                                         <label>Select Category</label>
                                         <select

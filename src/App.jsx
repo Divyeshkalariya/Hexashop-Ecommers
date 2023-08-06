@@ -54,6 +54,7 @@ import AdminUpdateFooter from './Componants/admin/pages/Admin-Update-Footer';
 import AdminUpdateSlider from './Componants/admin/pages/Admin-Update-Slider';
 import AdminUpdateState from './Componants/admin/pages/Admin-Update-State';
 import AdminUpdateCity from './Componants/admin/pages/Admin-Update-City';
+import AdminUpdateProduct from './Componants/admin/pages/Admin-Update-Product';
 
 
 function App() {
@@ -112,6 +113,7 @@ function App() {
           {/* update */}
           <Route path="admin-login/admin-update-category/:id" element={<AdminUpdateCategory />} />
           <Route path="/admin-login/admin-update-subcategory/:id" element={<AdminUpdateSubCategory />} />
+          <Route path="/admin-login/admin-update-product/:id" element={<AdminUpdateProduct />} />
           <Route path="/admin-login/admin-update-footer/:id" element={<AdminUpdateFooter />} />
           <Route path="/admin-login/admin-update-slider/:id" element={<AdminUpdateSlider />} />
           <Route path="/admin-login/admin-update-state/:id" element={<AdminUpdateState />} />

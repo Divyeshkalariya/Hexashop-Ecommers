@@ -1,42 +1,18 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap';
+import { Col, Container } from 'react-bootstrap';
 import Slider from "react-slick";
 import axios from 'axios';
 
-
-// function SampleNextArrow(props) {
-//     const { className, style, onClick } = props;
-//     return (
-//         <div
-//             className={className}
-//             style={{ ...style, display: "block" }}
-//             onClick={onClick}
-//         />
-//     );
-// }
-
-// function SamplePrevArrow(props) {
-//     const { className, style, onClick } = props;
-//     return (
-//         <div
-//             className={className}
-//             style={{ ...style, display: "block" }}
-//             onClick={onClick}
-//         />
-//     );
-// }
 
 export default function Menproductslider() {
 
     // SLICK SLIDER 
     const settings = {
         // dots: true,
-        autoplay:true,
+        autoplay: true,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        // nextArrow: <SampleNextArrow/>,
-        // prevArrow: <SamplePrevArrow/>,
         responsive: [
             {
                 breakpoint: 1024,
@@ -65,7 +41,6 @@ export default function Menproductslider() {
     }
 
     const [mensdata, setMensdata] = useState([])
-
     useEffect(() => {
         //fetch data from local browser api json-server api using axios
         axios.get("http://localhost:2602/Mensliderdata")
@@ -78,15 +53,15 @@ export default function Menproductslider() {
         <Fragment>
             <Container data-aos="fade-up" data-aos-duration="1000">
                 <Container>
-                    <div className='mx-auto'>
+                    <Col className='mx-auto'>
                         <Slider {...settings} className='slider-main'>
                             {mensdata && mensdata.map((item) => {
                                 return (
-                                    <div className='p-2 product-outer' key={item.id}>
-                                        <div className='product-card '>
-                                            <img src={item.productimg} alt="mens-cloths" className='img-fluid' />
-                                        </div>
-                                        <div className='product-icons'>
+                                    <Col className='p-2 product-outer'>
+                                        <Col className='product-card '>
+                                            <img src={item.productimg} className='img-fluid' />
+                                        </Col>
+                                        <Col className='product-icons'>
                                             <ul className='d-flex justify-content-center w-75 mx-auto'>
                                                 <li className='iconbox'>
                                                     <i className="fa fa-eye" aria-hidden="true"></i>
@@ -98,8 +73,8 @@ export default function Menproductslider() {
                                                     <i className="fa fa-shopping-cart" aria-hidden="true"></i>
                                                 </li>
                                             </ul>
-                                            <div className=''>
-                                                <div className='d-flex justify-content-between mt-4'>
+                                            <Col className=''>
+                                                <Col className='d-flex justify-content-between mt-4'>
                                                     <h4 className='product-subheading'>{item.productname}</h4>
                                                     <span className='mt-1 product-starts'>
                                                         <i className='fa fa-star me-1'></i>
@@ -108,17 +83,17 @@ export default function Menproductslider() {
                                                         <i className='fa fa-star me-1'></i>
                                                         <i className='fa fa-star '></i>
                                                     </span>
-                                                </div>
-                                                <div>
+                                                </Col>
+                                                <Col>
                                                     <h3 className='product-price'> &#8377; {item.productoffer}</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                </Col>
+                                            </Col>
+                                        </Col>
+                                    </Col>
                                 )
                             })}
                         </Slider>
-                    </div>
+                    </Col>
                 </Container>
             </Container>
         </Fragment>

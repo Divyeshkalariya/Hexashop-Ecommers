@@ -76,15 +76,15 @@ export default function AdminAddProduct() {
 
           <Container fluid="true" id="admin-content">
             {/* Add Product */}
-            <Container fluid="true" className='mb-5' id='add-product'>
-            <Col className='my-3'>
+            <Container fluid="true" id='add-product' className="bg-dark text-white">
+            <Col className='py-3'>
                 <h1 className='text-center pt-1'>Add Product</h1>
                 <hr className='border border-2 border-info w-25 mx-auto' />
               </Col>
 
-              <Container className='w-75 mb-4'>
+              <Container className='w-75 pb-4'>
                 <Form>
-                  <div className='mt-3'>
+                  <div className='pt-3'>
                     <label>Select Category </label>
                     <select
                       className='form-control mt-1'

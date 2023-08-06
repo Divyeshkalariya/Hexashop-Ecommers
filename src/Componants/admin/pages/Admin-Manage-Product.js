@@ -4,11 +4,13 @@ import AdminHeader from '../Admin-Header';
 import AdminSidebar from '../Admin-Sidebar';
 import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminManageProduct() {
 
   // DISPLAY DATA FROM API
   const [ product, setProduct ] = useState([])
+  const Navigate = useNavigate();
 
   const displayproduct = () => {
     axios.get("http://localhost:2602/AddProducts")
@@ -77,7 +79,7 @@ export default function AdminManageProduct() {
                           <td>{item.productoffer}</td>
                           <td>{item.productaddedate}</td>
                           {/* <td style={{width:"30%"}}>{item.productdescriptions}</td> */}
-                          <td><i className='fa fa-pencil text-primary'></i>
+                          <td><i className='fa fa-pencil text-primary' onClick={()=> Navigate(`/admin-login/admin-update-product/${item.id}`)}></i>
                           <br/>
                           <i className='fa fa-trash text-danger' onClick={() => Deletproduct(item.id)}></i>
                           </td>

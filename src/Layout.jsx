@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Badge, Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Badge, Button, Col, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import brandlogo from './assets/images/navbar/brand-logo.png';
@@ -76,7 +76,7 @@ export default function Layout() {
                         aria-expanded="false"
                     >
                         <div className="menutoggle me-2">
-                            <div className="hamburger navbar-toggle border-0 p-0" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                            <div className="hamburger navbar-toggle border-0 p-0" data-bs-toggle="collapse" data-bs-target="#navbarScroll" 
                                 aria-label="Toggle navigation"
                                 onClick={Showmenu}>
                                 <span className="bar"></span>
@@ -149,6 +149,7 @@ export default function Layout() {
                                 </span>
                             </Link>
                             <NavDropdown title="Pages" id="navbarScrollingDropdown">
+                            <Col className="dropdown-body">
                                 <NavDropdown.Item>
                                     <Link
                                         to="/aboutus"
@@ -220,23 +221,7 @@ export default function Layout() {
                                         </span>
                                     </Link>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <Link
-                                        to="/Product-details"
-                                        spy="true"
-                                        smooth={true}
-                                        offset={-40}
-                                        duration={500}
-                                    >
-                                        <span
-                                            data-bs-toggle="collapse"
-                                            data-bs-target=".navbar-collapse.show"
-                                            onClick={Hidemenu}
-                                        >
-                                            Product-Details
-                                        </span>
-                                    </Link>
-                                </NavDropdown.Item>
+                                </Col>
                             </NavDropdown>
                             <Link
                                 to="/Account"

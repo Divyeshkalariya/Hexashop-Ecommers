@@ -43,8 +43,8 @@ export default function AdminAddSlider() {
 
           <Container fluid="true" id='admin-content'>
             {/* Add Slider */}
-            <Container fluid="true" className='mb-5' id='add-slider' >
-              <Col className='my-3'>
+            <Container fluid="true" className='pb-5 bg-dark text-white' id='add-slider' >
+              <Col className='py-4'>
                 <h1 className='text-center pt-1'>Add Slide</h1>
                 <hr className='border border-2 border-info w-25 mx-auto' />
               </Col>
@@ -81,7 +81,7 @@ export default function AdminAddSlider() {
                     />
                   </Form.Group>
 
-                    <Button type='button' variant='outline-primary ' className='px-3 mt-3 w-25' onClick={Addslide} >Add State</Button>
+                    <Button type='button' variant='outline-primary ' className='px-3 mt-4 w-25' onClick={Addslide} >Add State</Button>
                   </Form>
 
               </Container>

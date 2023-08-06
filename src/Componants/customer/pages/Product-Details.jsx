@@ -55,7 +55,7 @@ export default function ProductDetails() {
                                 <img src={product.productimg} className='img-fluid' />
                             </Col>
                             <Col sm={6} md={6} lg={6} className="col-12 details-right">
-                                <h1>{product.productname}</h1>
+                                <h1 className='mt-4 mt-md-0 mt-lg-0'>{product.productname}</h1>
                                 <div className='mt-2'>
                                     <i className='fa fa-star text-warning fs-4'></i>
                                     <i className='fa fa-star text-warning fs-4 ms-1'></i>
@@ -63,28 +63,28 @@ export default function ProductDetails() {
                                     <i className='fa fa-star text-warning fs-4 ms-1'></i>
                                     <i className='fa fa-star text-warning fs-4 ms-1'></i>
                                 </div>
-                                <div className='mt-2'>
-                                    <b>Size : </b>
-                                    <div className="form-check form-check-inline">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioS" value="optionS" />
-                                        <label className="form-check-label" htmlFor="inlineRadioS">S</label>
-                                    </div>
-                                    <div className="form-check form-check-inline">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioM" value="optionM" />
-                                        <label className="form-check-label" htmlFor="inlineRadioM">M</label>
-                                    </div>
-                                    <div className="form-check form-check-inline">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioL" value="optionL" />
-                                        <label className="form-check-label" htmlFor="inlineRadioL">L</label>
-                                    </div>
-                                    <div className="form-check form-check-inline">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioXL" value="optionXL" />
-                                        <label className="form-check-label" htmlFor="inlineRadioXL">XL</label>
-                                    </div>
-                                    <div className="form-check form-check-inline">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioXXL" value="optionXXL" />
-                                        <label className="form-check-label" htmlFor="inlineRadioXXL">XXL</label>
-                                    </div>
+                                <div className='mt-2 d-flex'>
+                                    <b className='me-4'>Size&nbsp;: </b>
+                                        <div className="form-check form-check-inline">
+                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioS" value="optionS" />
+                                            <label className="form-check-label" htmlFor="inlineRadioS">S</label>
+                                        </div>
+                                        <div className="form-check form-check-inline">
+                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioM" value="optionM" />
+                                            <label className="form-check-label" htmlFor="inlineRadioM">M</label>
+                                        </div>
+                                        <div className="form-check form-check-inline">
+                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioL" value="optionL" />
+                                            <label className="form-check-label" htmlFor="inlineRadioL">L</label>
+                                        </div>
+                                        <div className="form-check form-check-inline">
+                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioXL" value="optionXL" />
+                                            <label className="form-check-label" htmlFor="inlineRadioXL">XL</label>
+                                        </div>
+                                        <div className="form-check form-check-inline">
+                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioXXL" value="optionXXL" />
+                                            <label className="form-check-label" htmlFor="inlineRadioXXL">XXL</label>
+                                        </div>
                                 </div>
                                 <h3 className='mt-2'>Rs. {product.productoffer}</h3>
 

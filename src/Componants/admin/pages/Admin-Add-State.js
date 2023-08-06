@@ -37,8 +37,8 @@ export default function AdminAddState() {
 
                     <Container fluid="true" id='admin-content'>
                         {/* Add Slider */}
-                        <Container fluid="true" className='mb-5' id='add-state' >
-                            <Col className='my-3'>
+                        <Container fluid="true" className='pb-5 bg-dark text-white' id='add-state' >
+                            <Col className='py-3'>
                                 <h1 className='text-center pt-1'>Add State</h1>
                                 <hr className='border border-2 border-info w-25 mx-auto' />
                             </Col>
@@ -53,7 +53,7 @@ export default function AdminAddState() {
                                         />
                                     </Form.Group>
 
-                                    <Button type='button' variant='outline-primary ' className='px-3 mt-3 w-25' onClick={Addstate} >Add State</Button>
+                                    <Button type='button' variant='outline-primary ' className='px-3 mt-4 w-25' onClick={Addstate} >Add State</Button>
                                 </Form>
 
                             </Container>
