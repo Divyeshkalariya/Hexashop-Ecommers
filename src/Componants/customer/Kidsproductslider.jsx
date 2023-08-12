@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
 import Slider from "react-slick";
 import axios from 'axios';
+import { SOURCE_URL } from '../../api/api';
 
 
 function SampleNextArrow(props) {
@@ -69,7 +70,7 @@ export default function Kidsproductslider() {
     const [kidsdata, setKidsdata] = useState([])
     useEffect(() => {
         //fetch data from local broswer api json-server api using axios
-        axios.get("http://localhost:2602/Kidsliderdata")
+        axios.get(SOURCE_URL+"Kidsliderdata")
             .then((response) => {
                 setKidsdata(response.data)
             });

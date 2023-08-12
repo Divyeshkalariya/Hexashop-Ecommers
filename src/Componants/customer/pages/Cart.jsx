@@ -6,6 +6,8 @@ import axios from 'axios';
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function Catr() {
 
@@ -32,10 +34,10 @@ export default function Catr() {
 
   // ADD PRODUCT FROM API
   const [product, setProduct] = useState([]);
-  // const Navigate = useNavigate('');
+  const Navigate = useNavigate('');
 
   useEffect(() => {
-    axios.get('http://localhost:2602/Cart')
+    axios.get(SOURCE_URL+'Cart')
       .then((res) => {
         setProduct(res.data)
       });
@@ -44,19 +46,19 @@ export default function Catr() {
 
   //DELET ITEM FROM CART
   const DeletProduct = (id) => {
-    axios.delete(`http://localhost:2602/Cart/${id}`)
+    axios.delete(SOURCE_URL+`Cart/${id}`)
       .then(() => {
-        // toast('Product Remove From Cart', {
-        //   position: "top-right",
-        //   autoClose: 4000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "colored",
-        // });
-        window.location="/cart";
+        toast('Product Remove From Cart', {
+          position: "top-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+        window.location = "/cart";
       })
   }
 
@@ -142,33 +144,27 @@ export default function Catr() {
             </div>
             <div className='border border-black'>
               <h4 className='bg-dark text-white p-3 m-0'>Cart Summary</h4>
-              <InputGroup className="m-0">
-                <Form.Control
-                  defaultValue="Subtotal"
-                  className='rounded-0 py-3 border border-bottom-1 border-top-0 border-start-0 border-end-0 border-black text-center'
-                />
-                <Form.Control
-                  value={product.map(item => item.productoffer * item.productqut).reduce((total, value) =>(parseInt(total) + parseInt(value)), 0)
-                  }
-                  readOnly
-                  className='rounded-0 py-3 border border-bottom-1 border-top-0 border-start-0 border-end-0 border-black text-center'
-                />
-              </InputGroup>
+              <Col className=" d-flex">
+                <p className='rounded-0 py-3 m-0 border border-bottom-1 border-top-0 border-start-0 border-end-0 border-black text-center w-50'
+                >Subtotal</p>
+                <p className='rounded-0 py-3 m-0 border border-bottom-1 border-top-0 border-start-0 border-end-0 border-black text-center w-50'
+                >&#8377; {product.map(item => item.productoffer * item.productqut).reduce((total, value) =>(parseInt(total) + parseInt(value)), 0)
+                  }</p>
+              </Col>
 
-              <InputGroup className="m-0">
-                <Form.Control
-                  defaultValue="Shipping"
-                  className='rounded-0 py-3 border border-bottom-1 border-top-0 border-start-0 border-end-0 border-black text-center'
-                />
-                <Form.Control
-                  defaultValue="00"
-                  className='rounded-0 py-3 border border-bottom-1 border-top-0 border-start-0 border-end-0 border-black text-center'
-                />
-              </InputGroup>
+              <Col className=" d-flex">
+                <p className='rounded-0 py-3 m-0 border border-bottom-1 border-top-0 border-start-0 border-end-0 border-black text-center w-50'
+                >Shipping</p>
+                <p className='rounded-0 py-3 m-0 border border-bottom-1 border-top-0 border-start-0 border-end-0 border-black text-center w-50'>
+                &#8377; 00
+                </p>
+              </Col>
               <div>
-                <Button variant='warning' className='w-100 rounded-0 py-2 fs-5' href='/Checkout'>
+              <Link to="/checkout">
+                <Button variant='warning' className='w-100 rounded-0 py-2 fs-5' >
                   CheckOut
                 </Button>
+                </Link>
               </div>
             </div>
           </Col>
@@ -182,6 +178,6 @@ export default function Catr() {
       <button href="#header" onClick={scrollToTop} className="scroll-top bg-dark" data-aos="zoom-in" data-aos-duration="1000"> <i className="fa fa-angle-up"></i></button>
 
 
-    </div >
+    </div>
   )
 }

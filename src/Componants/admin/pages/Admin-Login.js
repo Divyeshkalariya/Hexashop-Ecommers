@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import { Button, Col, Container, Form, FormGroup, Row } from 'react-bootstrap';
 import login from "../../../assets/images/admin/admin-login/login-gif.gif";
 import { Link } from 'react-router-dom';
-import AdminLayout from '../../../Admin-Layout';
 
 export default function AdminLogin() {
     return (

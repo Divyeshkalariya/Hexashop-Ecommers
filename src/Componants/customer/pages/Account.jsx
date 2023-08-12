@@ -4,6 +4,7 @@ import { Button, Col, Container, FloatingLabel, Form, Row } from 'react-bootstra
 import axios from 'axios';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function Account() {
 
@@ -54,7 +55,7 @@ export default function Account() {
         }
 
         //add data in json file via link
-        axios.post("http://localhost:2602/Accountdata", insert)
+        axios.post(SOURCE_URL+"Accountdata", insert)
             .then(() => {
                 swal("Thank You For Create Account")
                 window.location="/Account"
@@ -65,14 +66,14 @@ export default function Account() {
     //FATCH DATA IN STATE
     const [addstate, setAddState] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:2602/AddState')
+        axios.get(SOURCE_URL+'AddState')
             .then(res => setAddState(res.data))
     }, [])
 
     //FATCH DATA IN CITY
     const [addcity, setAddCity] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:2602/AddCity')
+        axios.get(SOURCE_URL+'AddCity')
             .then(res => setAddCity(res.data))
     }, [])
 

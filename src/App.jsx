@@ -24,7 +24,7 @@ import Help from './Componants/customer/pages/Help';
 import Faqs from './Componants/customer/pages/Faqs';
 import Cart from './Componants/customer/pages/Cart';
 import Tracking from './Componants/customer/pages/Tracking';
-
+import Login from './Componants/customer/pages/Login';
 // admin side
 import AdminLogin from './Componants/admin/pages/Admin-Login';
 import AdminLayout from './Admin-Layout';
@@ -57,6 +57,7 @@ import AdminUpdateCity from './Componants/admin/pages/Admin-Update-City';
 import AdminUpdateProduct from './Componants/admin/pages/Admin-Update-Product';
 
 
+
 function App() {
   useEffect(() => {
     AOS.init(
@@ -77,6 +78,7 @@ function App() {
             <Route path="/Products" element={<Products />} />
             <Route path="/Contactus" element={<Contactus />} />
             <Route path="/Account" element={<Account />} />
+            <Route path="/Login" element={<Login/>} />
             <Route path="/Product-details" element={<ProductDetails />} />
             <Route path="/Checkout" element={<Checkout />} />
             <Route path="/Cart" element={<Cart />} />

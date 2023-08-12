@@ -4,15 +4,33 @@ import Footre from '../Footre';
 import Pagebanner from '../Pagebanner';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function ProductDetails() {
 
     const [productdata, setProductData] = useState([]);
-    const Navigate = useNavigate('');
+    // const Navigate = useNavigate();
+    // const { id } = useParams();
+    // console.log(id, 'id', productdata)
+
+    // const getproductdata = async () => {
+    //     try {
+    //         const response = await fetch(`http://localhost:2602/AddProducts/${id}`);
+    //         setProductData(response.data);
+    //     }
+    //     catch (error) {
+    //         console.log(error)
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     getproductdata();
+    // }, [])
+
+    // if(!Object.keys(productdata.id).length > 0) return <div>Product Not Found</div>
 
     useEffect(() => {
-        axios.get("http://localhost:2602/Product-Details")
+        axios.get(SOURCE_URL + "Product-Details")
             .then((response) => {
                 setProductData(response.data)
             });
@@ -30,7 +48,7 @@ export default function ProductDetails() {
 
     // ADD PRODUCT IN CART
     const AddToCart = (data) => {
-        axios.post("http://localhost:2602/Cart", data)
+        axios.post(SOURCE_URL + "Cart", data)
             .then(() => {
                 Swal.fire({
                     icon: 'success',
@@ -39,6 +57,15 @@ export default function ProductDetails() {
                 })
             })
     }
+
+    // ADD PRODUCT IN PRODUCT-DETAILS
+    const DeletProduct = (id) => {
+        axios.delete(SOURCE_URL + `Product-Details/${id}`)
+            .then(() => {
+                window.location = "/Product-Details";
+            })
+    }
+
 
 
     return (
@@ -50,7 +77,7 @@ export default function ProductDetails() {
             <Container id='product-details' className='p-5'>
                 {productdata && productdata.map((product) => {
                     return (
-                        <Row className='productdetails' key={product.id}>
+                        <Row className='productdetails mt-4' key={product.id}>
                             <Col sm={6} md={6} lg={6} className="col-12 d-flex justify-content-center">
                                 <img src={product.productimg} className='img-fluid' />
                             </Col>
@@ -65,32 +92,33 @@ export default function ProductDetails() {
                                 </div>
                                 <div className='mt-2 d-flex'>
                                     <b className='me-4'>Size&nbsp;: </b>
-                                        <div className="form-check form-check-inline">
-                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioS" value="optionS" />
-                                            <label className="form-check-label" htmlFor="inlineRadioS">S</label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioM" value="optionM" />
-                                            <label className="form-check-label" htmlFor="inlineRadioM">M</label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioL" value="optionL" />
-                                            <label className="form-check-label" htmlFor="inlineRadioL">L</label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioXL" value="optionXL" />
-                                            <label className="form-check-label" htmlFor="inlineRadioXL">XL</label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioXXL" value="optionXXL" />
-                                            <label className="form-check-label" htmlFor="inlineRadioXXL">XXL</label>
-                                        </div>
+                                    <div className="form-check form-check-inline">
+                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioS" value="optionS" />
+                                        <label className="form-check-label" htmlFor="inlineRadioS">S</label>
+                                    </div>
+                                    <div className="form-check form-check-inline">
+                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioM" value="optionM" />
+                                        <label className="form-check-label" htmlFor="inlineRadioM">M</label>
+                                    </div>
+                                    <div className="form-check form-check-inline">
+                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioL" value="optionL" />
+                                        <label className="form-check-label" htmlFor="inlineRadioL">L</label>
+                                    </div>
+                                    <div className="form-check form-check-inline">
+                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioXL" value="optionXL" />
+                                        <label className="form-check-label" htmlFor="inlineRadioXL">XL</label>
+                                    </div>
+                                    <div className="form-check form-check-inline">
+                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioXXL" value="optionXXL" />
+                                        <label className="form-check-label" htmlFor="inlineRadioXXL">XXL</label>
+                                    </div>
                                 </div>
                                 <h3 className='mt-2'>Rs. {product.productoffer}</h3>
 
                                 <p>{product.productdescriptions}</p>
 
                                 <Button variant='outline-success' className='rounded-0' onClick={() => AddToCart(product)}>Add To Cart</Button>
+                                <Button variant='outline-danger' className='rounded-0 ms-3' onClick={() => DeletProduct(product.id)}>Remove</Button>
                             </Col>
                         </Row>
                     )

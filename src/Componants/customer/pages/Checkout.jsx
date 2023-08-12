@@ -3,13 +3,16 @@ import Footre from '../Footre'
 import { Button } from 'react-bootstrap'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
+import { SOURCE_URL } from '../../../api/api'
 
 export default function Checkout() {
 
     // FATCH STATE CITY
     const [state, setState] = useState([])
+    const Navigate = useNavigate('');
     useEffect(() => {
-        axios.get('http://localhost:2602/AddState')
+        axios.get(SOURCE_URL+'AddState')
             .then((response) => {
                 setState(response.data)
             })
@@ -18,7 +21,7 @@ export default function Checkout() {
     // FATCH STATE CITY
     const [city, setCity] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:2602/Addcity')
+        axios.get(SOURCE_URL+'Addcity')
             .then((response) => {
                 setCity(response.data)
             })
@@ -27,21 +30,21 @@ export default function Checkout() {
     // FATCH CART PRODUCT NAME
     const [cart, setCart] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:2602/Cart')
+        axios.get(SOURCE_URL+'Cart')
             .then((response) => {
                 setCart(response.data)
             })
     }, [])
 
     // ORDERPLACE
-    const OrderPlace=()=>{
+    const OrderPlace = () => {
         Swal.fire({
             icon: 'success',
             title: 'Order',
             text: 'Placed Successfully',
         });
         setTimeout(() => {
-            window.location="/home"
+            Navigate("/home")
         }, 2000);
     }
 
@@ -67,11 +70,11 @@ export default function Checkout() {
                                     <label className='mt-2'>E-mail</label>
                                     <input className="form-control rounded-0 border border-black" type="text" placeholder="Enter Email Address" />
                                 </div>
-                                <div class="col-md-6 form-group">
+                                <div className="col-md-6 form-group">
                                     <label className='mt-2'>Mobile No</label>
                                     <input className="form-control rounded-0 border border-black" type="text" placeholder="Enter Mobile Number" />
                                 </div>
-                                <div class="col-md-12 form-group">
+                                <div className="col-md-12 form-group">
                                     <label className='mt-2'>Address</label>
                                     <textarea className="form-control rounded-0 border border-black" type="text" placeholder="Enter Your Address"></textarea>
                                 </div>
@@ -101,7 +104,7 @@ export default function Checkout() {
 
                                 <div className="col-md-6 form-group">
                                     <label className='mt-2'>ZIP Code</label>
-                                    <input className="form-control rounded-0 border border-black" type="text" placeholder="123" />
+                                    <input className="form-control rounded-0 border border-black" type="text" placeholder="Enter Zip-Code" />
                                 </div>
 
                             </div>
@@ -119,36 +122,31 @@ export default function Checkout() {
                                     return (
                                         <div className="d-flex justify-content-between" key={product.id}>
                                             <p>{product.productname}</p>
-                                            <p>{product.productoffer}</p>
+                                            <p>&#8377; {product.productoffer}</p>
                                         </div>
                                     )
                                 })}
                                 <hr className="mt-0" />
                                 <div className="d-flex justify-content-between mb-3 pt-1">
                                     <h6 className="font-weight-medium">Subtotal</h6>
-                                    <input
-                                        value={cart.map(item => item.productoffer * item.productqut).reduce((total, value) => (parseInt(total) + parseInt(value)), 0)}
-                                        readOnly
-                                        className='rounded-0 border-0 text-end'
+                                    <p className='rounded-0 border-0 text-end'
                                         id='subtotle'
-                                    />
+                                    >&#8377; {cart.map(item => item.productoffer * item.productqut).reduce((total, value) => (parseInt(total) + parseInt(value)), 0)}</p>
                                 </div>
                                 <div className='d-flex justify-content-between'>
                                     <input
                                         defaultValue="Shipping"
                                         className='rounded-0 border-0 text-start form-control p-0'
                                     />
-                                    <input
-                                        defaultValue="00"
-                                        className='rounded-0 border-0 p-0 text-end form-control text-black'
+                                    <p className='rounded-0 border-0 p-0 text-end form-control text-black'
                                         id='shipping'
-                                    />
+                                    >&#8377; 00</p>
                                 </div>
                             </div>
                             <div className="card-footer border border-black border-bottom-0 border-end-0 border-start-0 bg-transparent rounded-0">
                                 <div className="d-flex justify-content-between mt-2">
                                     <h5 className="font-weight-bold">Total</h5>
-                                    <h5 className="font-weight-bold">Rs.{cart.map(item => item.productoffer * item.productqut).reduce((total, value) => (parseInt(total) + parseInt(value)), 0)}</h5>
+                                    <h5 className="font-weight-bold">&#8377; {cart.map(item => item.productoffer * item.productqut).reduce((total, value) => (parseInt(total) + parseInt(value)), 0)}</h5>
                                 </div>
                             </div>
                         </div>

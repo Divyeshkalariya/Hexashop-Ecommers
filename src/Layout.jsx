@@ -5,6 +5,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import brandlogo from './assets/images/navbar/brand-logo.png';
 import Topbar from './Componants/customer/pages/Topbar';
 import axios from 'axios';
+import { SOURCE_URL } from './api/api';
 
 export default function Layout() {
 
@@ -53,7 +54,7 @@ export default function Layout() {
     // COUNT CART ITEMS
     const [itemCount, setItemCount] = useState(0);
     useEffect(() => {
-        axios.get("http://localhost:2602/Cart")
+        axios.get(SOURCE_URL+"Cart")
             .then((result) => {
                 setItemCount(result.data)
             })

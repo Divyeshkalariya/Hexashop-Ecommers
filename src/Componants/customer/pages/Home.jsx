@@ -32,6 +32,7 @@ import HomeSlider from '../HomeSlider';
 import CustomerReview from '../CustomerReview';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function Home() {
 
@@ -57,7 +58,7 @@ export default function Home() {
   // FATCH CATEGORY
   const [category , setCategory] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:2602/AddCategories")
+    axios.get(SOURCE_URL+"AddCategories")
       .then(res => setCategory(res.data))
   })
 
@@ -137,26 +138,6 @@ export default function Home() {
       <Container fluid="true" className='mt-3 mt-md-4 mt-lg-5'>
         <HomeSlider />
       </Container>
-
-      {/* category section start */}
-      {/* <Container fluid="true" id='category'>
-        <Row className='p-5'>
-          <Col className=' col-3 category-left m-0'>
-            <h2>Categories</h2>
-            <ul className='category-list'>
-              { category.map((item) => {
-                return(
-                  <li key={item.id}>
-                    <i className='fa fa-arrow-right'></i>
-                    <Link>{item.categoryname}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </Col>
-          <Col className='p-5 col-9 category-right'></Col>
-        </Row>
-      </Container> */}
 
       {/* mens section start */}
       <Container fluid="true" className='py-0 pb-md-2 pb-lg-5' id='mens'>

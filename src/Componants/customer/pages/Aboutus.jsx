@@ -15,6 +15,7 @@ import Aboutcontact from '../Aboutcontact';
 // footer section
 import Footre from '../Footre';
 import axios from 'axios';
+import { SOURCE_URL } from '../../../api/api';
 
 
 export default function Aboutus() {
@@ -41,7 +42,7 @@ export default function Aboutus() {
   // OUR TEAM DATA
   const [ourteam, setOurteam] = useState([])
   useEffect(() => {
-    axios.get(" http://localhost:2602/Ourteamcarddata")
+    axios.get(SOURCE_URL+"Ourteamcarddata")
       .then((response) => {
         setOurteam(response.data)
       })
@@ -92,7 +93,7 @@ export default function Aboutus() {
 
   const [ourbrand, setOurbrand] = useState([0])
   useEffect(() => {
-    axios.get("http://localhost:2602/Ourbrands")
+    axios.get(SOURCE_URL+"Ourbrands")
       .then((response) => {
         setOurbrand(response.data)
       })

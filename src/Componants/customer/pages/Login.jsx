@@ -2,23 +2,20 @@ import React, { Fragment } from 'react'
 import { Button, Col, Container, Form, FormGroup, Row } from 'react-bootstrap';
 import login from "../../../assets/images/admin/admin-login/login-gif.gif";
 import { Link } from 'react-router-dom';
-import AdminLayout from '../../../Admin-Layout';
+import Footre from '../Footre';
 
-export default function AdminLogin() {
+
+export default function Login() {
     return (
         <Fragment>
             <Container className='py-5' id='admin-login'>
                 <Col className='text-center'>
-                    <h1 className='text-warning'>Admin-Login</h1>
+                    <h1 className='text-warning'>Login</h1>
                     <hr className='w-25 mx-auto border border-3 border-info' />
                 </Col>
                 <Row className='mt-5'>
-                    <Col size={12} md={5} lg={5}>
-                        <img src={login} alt="Admin-login-gif" className='img-fluid' />
-
-                    </Col>
-                    <Col size={12} md={5} lg={5}>
-                        <Form className='p-5' action='admin-login/admin-dashbord'>
+                    <Col className='col-10 mx-auto'>
+                        <Form className='px-5' action='admin-login/admin-dashbord'>
                             <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                                 <Form.Label className='p-0'>
                                     Email
@@ -41,6 +38,10 @@ export default function AdminLogin() {
                     </Col>
                 </Row>
             </Container>
+
+            {/* Footer */}
+            <Footre/>
+
         </Fragment>
     )
 }

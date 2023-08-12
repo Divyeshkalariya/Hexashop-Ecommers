@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Col, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import Footre from '../Footre'
 
 export default function Tracking() {

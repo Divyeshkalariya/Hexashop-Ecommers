@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
+import { SOURCE_URL } from '../../api/api';
 
 const HomeSlider = () => {
 
@@ -20,7 +21,7 @@ const HomeSlider = () => {
     const [slide, setSlide] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:2602/HomeSlider")
+        axios.get(SOURCE_URL+"HomeSlider")
             .then(response => setSlide(response.data))
             .catch(err => console.log(err));
     }, [])

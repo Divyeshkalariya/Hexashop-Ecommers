@@ -1,8 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import logo from "../../assets/images/homepage/footer/white-logo.png";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Login from './pages/Login';
+import { SOURCE_URL } from '../../api/api';
 
 
 export default function Footre() {
@@ -10,7 +12,7 @@ export default function Footre() {
   // FOR FOOTER YEAR
   const [footer, setFooter] = useState([])
   useEffect(() => {
-    axios.get(' http://localhost:2602/Footer')
+    axios.get(SOURCE_URL+'Footer')
       .then(res => setFooter(res.data))
   }, [])
   
@@ -51,6 +53,9 @@ export default function Footre() {
                   <p className='mt-3'>
                     <Link to="/Tracking" className='text-white text-decoration-none' onClick={scrolltop}>Tracking ID</Link>
                   </p>
+                  <Link to="/Login">
+                    <Button type='button' variant='outline-warning'  className='rounded-0 px-4'>Login</Button>
+                  </Link>
                 </Col>
                 <Col size={12} md={6} lg={3}>
                   <h4 className='text-white'>Useful Links</h4>
@@ -63,6 +68,9 @@ export default function Footre() {
                   <p className='mt-3'>
                     <Link to="/contactus" className='text-white text-decoration-none' onClick={scrolltop}>Contact us</Link>
                   </p>
+                  <Link to="/Account">
+                    <Button type='button' variant='outline-warning'  className='rounded-0 px-4'>Register</Button>
+                  </Link>
                 </Col>
                 <Col size={12} md={6} lg={3}>
                   <h4 className='text-white'>Shopping & Categories</h4>

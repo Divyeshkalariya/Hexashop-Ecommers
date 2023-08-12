@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import swal from 'sweetalert';
 import emailjs from '@emailjs/browser';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function Contactus() {
 
@@ -63,10 +64,12 @@ export default function Contactus() {
     }
 
     //add data in json file via link
-    axios.post("http://localhost:2602/Contactusdata", insert)
+    axios.post(SOURCE_URL + "Contactusdata", insert)
       .then(() => {
         swal("Thank you for contact us our team contact you soon")
-        window.location = '/Contactus';
+        setTimeout(() => {
+          window.location = '/Contactus';
+        }, 1500);
       });
   }
 

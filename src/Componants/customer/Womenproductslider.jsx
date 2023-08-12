@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
 import Slider from "react-slick";
 import axios from 'axios';
+import { SOURCE_URL } from '../../api/api';
 
 export default function Womenproductslider() {
 
@@ -41,7 +42,7 @@ export default function Womenproductslider() {
 
     const [womendata , setWomendata] = useState ([])
     useEffect(() => {
-        axios.get("http://localhost:2602/Womensliderdata")
+        axios.get(SOURCE_URL+"Womensliderdata")
             .then((response) => {
                 setWomendata(response.data)
             })

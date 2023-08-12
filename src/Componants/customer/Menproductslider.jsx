@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Col, Container } from 'react-bootstrap';
 import Slider from "react-slick";
 import axios from 'axios';
+import { SOURCE_URL } from '../../api/api';
 
 
 export default function Menproductslider() {
@@ -43,7 +44,7 @@ export default function Menproductslider() {
     const [mensdata, setMensdata] = useState([])
     useEffect(() => {
         //fetch data from local browser api json-server api using axios
-        axios.get("http://localhost:2602/Mensliderdata")
+        axios.get(SOURCE_URL+"Mensliderdata")
             .then((response) => {
                 setMensdata(response.data)
             });
