@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer'
 import axios from 'axios'
 import swal from 'sweetalert'
 import { useNavigate } from 'react-router-dom'
+import { SOURCE_URL } from '../../../api/api'
 
 
 export default function AdminAddSlider() {
@@ -23,7 +24,7 @@ export default function AdminAddSlider() {
       slidesubtitle : slidesubtitle.current.value,
     }
 
-    axios.post("http://localhost:2602/HomeSlider" , insert)
+    axios.post(SOURCE_URL+"HomeSlider" , insert)
       .then(() => {
         swal("Slide Added Successfully")
         Navigate('/admin-login/admin-manage-slider')

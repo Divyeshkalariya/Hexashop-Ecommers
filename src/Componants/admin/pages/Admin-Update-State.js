@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer'
 import axios from 'axios'
 import swal from 'sweetalert'
 import { useNavigate , useParams } from 'react-router-dom'
+import { SOURCE_URL } from '../../../api/api'
 
 export default function AdminUpdateState() {
 
@@ -14,7 +15,7 @@ export default function AdminUpdateState() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:2602/AddState/${id}`)
+        axios.get(SOURCE_URL+`AddState/${id}`)
             .then((response) => {
                 state.current.value = response.data.state;
             })
@@ -26,7 +27,7 @@ export default function AdminUpdateState() {
         }
 
         // update data using axios library axios.put()
-        axios.put(`http://localhost:2602/AddState/${id}`, update)
+        axios.put(SOURCE_URL+`AddState/${id}`, update)
             .then(() => {
                 swal("State Update Successfully");
                 Navigate('/admin-login/admin-manage-state')

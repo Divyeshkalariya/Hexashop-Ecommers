@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
+import { SOURCE_URL } from '../../../api/api';
 
 
 export default function AdminAddProduct() {
@@ -35,7 +36,7 @@ export default function AdminAddProduct() {
       productdescriptions: productdescriptions.current.value
 
     }
-    axios.post("http://localhost:2602/AddProducts", insert)
+    axios.post(SOURCE_URL+"AddProducts", insert)
       .then(() => {
         swal("Product Add Successfully");
       });
@@ -46,7 +47,7 @@ export default function AdminAddProduct() {
   // FATCH CATEGORY FROM API
   const [allcategory, setAllCategory] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:2602/AddCategories")
+    axios.get(SOURCE_URL+"AddCategories")
       .then((response) => {
         setAllCategory(response.data)
       });
@@ -56,7 +57,7 @@ export default function AdminAddProduct() {
   // FATCH SUB-CATEGORY FROM API
   const [addSubCategory, setAddSubCategory] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:2602/AddSubCategories")
+    axios.get(SOURCE_URL+"AddSubCategories")
       .then((response) => {
         setAddSubCategory(response.data)
       });

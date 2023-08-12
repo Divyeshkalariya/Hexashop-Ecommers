@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer'
 import axios from 'axios'
 import swal from 'sweetalert'
 import { useNavigate } from 'react-router-dom'
+import { SOURCE_URL } from '../../../api/api'
 
 export default function AdminAddCity() {
 
@@ -13,7 +14,7 @@ export default function AdminAddCity() {
     const [selectstate, setSelectState] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:2602/AddState")
+        axios.get(SOURCE_URL+"AddState")
             .then((res) => {
                 setSelectState(res.data)
             })
@@ -30,7 +31,7 @@ export default function AdminAddCity() {
             city: city.current.value,
         }
 
-        axios.post("http://localhost:2602/AddCity", insert)
+        axios.post(SOURCE_URL+"AddCity", insert)
             .then(() => {
                 swal("City Added Successfully");
                 Navigate('/admin-login/admin-manage-city')

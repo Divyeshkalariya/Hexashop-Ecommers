@@ -7,6 +7,7 @@ import axios from 'axios';
 import { ExportToExcel } from './ExportToExcel'
 import DataTable from 'react-data-table-component';
 import { useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 
 export default function AdminManageCustomer() {
@@ -22,7 +23,7 @@ export default function AdminManageCustomer() {
 
   const getcustomertdata = async () => {
     try {
-      const response = await axios.get("http://localhost:2602/Accountdata");
+      const response = await axios.get(SOURCE_URL+"Accountdata");
       setCustomer(response.data);
       setFilterCustomer(response.data);
     }
@@ -45,7 +46,7 @@ export default function AdminManageCustomer() {
 
   // DELET DTAT FROM TABLE
   function deletCustomer(id) {
-    axios.delete(`http://localhost:2602/Accountdata/${id}`)
+    axios.delete(SOURCE_URL+`Accountdata/${id}`)
       .then((response) => {
         console.warn(response)
         getcustomertdata();

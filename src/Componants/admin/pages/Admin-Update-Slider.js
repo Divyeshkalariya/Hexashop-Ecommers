@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer'
 import axios from 'axios'
 import swal from 'sweetalert'
 import { useNavigate, useParams } from 'react-router-dom'
+import { SOURCE_URL } from '../../../api/api'
 
 
 export default function AdminUpdateSlider() {
@@ -18,7 +19,7 @@ export default function AdminUpdateSlider() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:2602/HomeSlider/${id}`)
+        axios.get(SOURCE_URL+`HomeSlider/${id}`)
             .then((response) => {
                 slideimageurl.current.value = response.data.slideimageurl;
                 slidetitle.current.value = response.data.slidetitle;
@@ -34,7 +35,7 @@ export default function AdminUpdateSlider() {
         }
 
         // update data using axios library axios.put()
-        axios.put(`http://localhost:2602/HomeSlider/${id}`, update)
+        axios.put(SOURCE_URL+`HomeSlider/${id}`, update)
             .then(() => {
                 swal("Slide Update Successfully")
             })

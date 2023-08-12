@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function AdminManageState() {
 
@@ -13,7 +14,7 @@ export default function AdminManageState() {
   const Navigate = useNavigate('');
 
   function displaystate(){
-    axios.get("http://localhost:2602/AddState")
+    axios.get(SOURCE_URL+"AddState")
       .then((response) => {
         setAddstate(response.data)
       })
@@ -25,7 +26,7 @@ export default function AdminManageState() {
 
   // DELET DATA FROM API
   const DeletState = (id) => {
-    axios.delete(`http://localhost:2602/AddState/${id}`)
+    axios.delete(SOURCE_URL+`AddState/${id}`)
       .then((response) => {
         console.warn(response)
         // swal('State Delet Successfully')

@@ -5,6 +5,7 @@ import AdminSidebar from '../Admin-Sidebar';
 import AdminFooter from '../Admin-Footer';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function AdminManageSubCategory() {
 
@@ -13,7 +14,7 @@ export default function AdminManageSubCategory() {
 
 
   const dispalysubcategory = () => {
-    axios.get("http://localhost:2602/AddSubcategories")
+    axios.get(SOURCE_URL+"AddSubcategories")
     .then((response) => {
       setAllcategory(response.data)
     });
@@ -26,7 +27,7 @@ export default function AdminManageSubCategory() {
 
   // DELET DATA FROM API
   function DeletSubCategory(id) {
-    axios.delete(`http://localhost:2602/AddSubcategories/${id}`)
+    axios.delete(SOURCE_URL+`AddSubcategories/${id}`)
       .then((response) => {
         console.warn(response)
         dispalysubcategory();

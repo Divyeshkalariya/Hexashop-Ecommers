@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 
 export default function AdminAddSubCategory() {
@@ -24,7 +25,7 @@ export default function AdminAddSubCategory() {
             subcategorydescraption: subcategorydescraption.current.value,
         }
 
-        axios.post("http://localhost:2602/AddSubCategories", insert)
+        axios.post(SOURCE_URL+"AddSubCategories", insert)
             .then(() => {
                 swal("Sub-Category Added Successfully")
             })
@@ -35,7 +36,7 @@ export default function AdminAddSubCategory() {
     const [addcategory, setAllcategory] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:2602/AddCategories")
+        axios.get(SOURCE_URL+"AddCategories")
             .then((response) => {
                 setAllcategory(response.data)
             });

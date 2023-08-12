@@ -5,6 +5,7 @@ import AdminSidebar from '../Admin-Sidebar';
 import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 const AdminManageFooter = () => {
 
@@ -12,7 +13,7 @@ const AdminManageFooter = () => {
     const Navigate = useNavigate('');
 
     useEffect(() => {
-        axios.get('http://localhost:2602/Footer')
+        axios.get(SOURCE_URL+'Footer')
             .then(res => setFooter(res.data))
     }, [])
 

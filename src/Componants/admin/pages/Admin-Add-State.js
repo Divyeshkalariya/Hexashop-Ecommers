@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer'
 import axios from 'axios'
 import swal from 'sweetalert'
 import { useNavigate } from 'react-router-dom'
+import { SOURCE_URL } from '../../../api/api'
 
 export default function AdminAddState() {
 
@@ -17,7 +18,7 @@ export default function AdminAddState() {
             state: state.current.value,
         }
 
-        axios.post("http://localhost:2602/AddState", insert)
+        axios.post(SOURCE_URL+"AddState", insert)
             .then(() => {
                 swal("State Added Successfully");
                 Navigate('/admin-login/admin-manage-state')

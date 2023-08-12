@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function AdminUpdateFooter() {
 
@@ -15,7 +16,7 @@ export default function AdminUpdateFooter() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:2602/Footer/${id}`)
+        axios.get(SOURCE_URL+`Footer/${id}`)
             .then((response) => {
                 yearfrom.current.value = response.data.yearfrom;
                 yearto.current.value = response.data.yearto;
@@ -27,7 +28,7 @@ export default function AdminUpdateFooter() {
             yearfrom: yearfrom.current.value,
             yearto: yearto.current.value,
         }
-        axios.put(`http://localhost:2602/Footer/${id}`, update)
+        axios.put(SOURCE_URL+`Footer/${id}`, update)
             .then(() => {
                 swal("Year Update Successfully")
             });

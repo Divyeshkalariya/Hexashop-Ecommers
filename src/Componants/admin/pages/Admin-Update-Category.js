@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { useNavigate, useParams } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 
 export default function AdminUpdateCategory() {
@@ -19,7 +20,7 @@ export default function AdminUpdateCategory() {
 
     useEffect(() => {
         // api fetch data using axios.get() method
-        axios.get(`http://localhost:2602/AddCategories/${id}`)
+        axios.get(SOURCE_URL+`AddCategories/${id}`)
             .then((response) => {
                 // fetch all data fro update
                 categoryname.current.value = response.data.categoryname;
@@ -37,7 +38,7 @@ export default function AdminUpdateCategory() {
         }
 
         // update data using axios library axios.put()
-        axios.put(`http://localhost:2602/AddCategories/${id}`, update)
+        axios.put(SOURCE_URL+`AddCategories/${id}`, update)
             .then(() => {
                 swal("Category Update Successfully")
             })

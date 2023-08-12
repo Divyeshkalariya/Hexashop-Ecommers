@@ -8,6 +8,7 @@ import { ExportToExcel } from './ExportToExcel'
 import DataTable from 'react-data-table-component';
 import ReactWhatsapp from 'react-whatsapp';
 import { useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function AdminManageContact() {
 
@@ -21,7 +22,7 @@ export default function AdminManageContact() {
 
   const getcontactdata = async () => {
     try {
-      const response = await axios.get("http://localhost:2602/Contactusdata");
+      const response = await axios.get(SOURCE_URL+"Contactusdata");
       setContact(response.data);
       setFilterContact(response.data);
     }
@@ -44,7 +45,7 @@ export default function AdminManageContact() {
 
   // DELET DATA FROM TABLE
   function deletUser(id) {
-    axios.delete(`http://localhost:2602/Contactusdata/${id}`)
+    axios.delete(SOURCE_URL+`Contactusdata/${id}`)
       .then((response) => {
         console.warn(response)
         getcontactdata();

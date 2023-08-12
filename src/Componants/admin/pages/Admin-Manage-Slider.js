@@ -5,6 +5,7 @@ import AdminFooter from '../Admin-Footer';
 import { Col, Container} from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function AdminManageSlider() {
 
@@ -13,7 +14,7 @@ export default function AdminManageSlider() {
   const Navigate = useNavigate();
 
   const displayslide = () => {
-    axios.get("http://localhost:2602/HomeSlider")
+    axios.get(SOURCE_URL+"HomeSlider")
       .then(res => {
         setManageSlider(res.data)
       })
@@ -25,7 +26,7 @@ export default function AdminManageSlider() {
 
   // DELET DATA FROM API
   const DeletSlide = (id) => {
-    axios.delete(`http://localhost:2602/HomeSlider/${id}`)
+    axios.delete(SOURCE_URL+`HomeSlider/${id}`)
       .then((response) => {
         console.warn(response)
         displayslide();

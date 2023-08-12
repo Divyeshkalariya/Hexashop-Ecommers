@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { SOURCE_URL } from '../../api/api';
 
 
 export default function AdminFooter() {
@@ -8,7 +9,7 @@ export default function AdminFooter() {
   const [footer, setFooter] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:2602/Footer')
+    axios.get(SOURCE_URL+'Footer')
       .then(res => setFooter(res.data))
       .catch(err => console.log(err));
   }, [])

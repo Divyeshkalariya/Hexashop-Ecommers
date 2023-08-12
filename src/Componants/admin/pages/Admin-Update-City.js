@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer'
 import axios from 'axios'
 import swal from 'sweetalert'
 import { useNavigate, useParams } from 'react-router-dom'
+import { SOURCE_URL } from '../../../api/api'
 
 export default function AdminUpdateCity() {
 
@@ -13,7 +14,7 @@ export default function AdminUpdateCity() {
     const [selectstate, setSelectState] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:2602/AddCity")
+        axios.get(SOURCE_URL+"AddCity")
             .then((res) => {
                 setSelectState(res.data)
             })
@@ -27,7 +28,7 @@ export default function AdminUpdateCity() {
 
     useEffect(() => {
         // api fetch data using axios.get() method
-        axios.get(`http://localhost:2602/AddCity/${id}`)
+        axios.get(SOURCE_URL+`AddCity/${id}`)
             .then((response) => {
                 // fetch all data from update
                 state.current.value = response.data.state;

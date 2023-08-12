@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import { SOURCE_URL } from '../../../api/api';
 
 
 export default function AdminUpdateProduct() {
@@ -14,7 +15,7 @@ export default function AdminUpdateProduct() {
     const [selectproduct, setSelectProduct] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:2602/AddProducts")
+        axios.get(SOURCE_URL+"AddProducts")
             .then((res) => {
                 setSelectProduct(res.data)
             })
@@ -35,7 +36,7 @@ export default function AdminUpdateProduct() {
 
     useEffect(() => {
         // api fetch data using axios.get() method
-        axios.get(`http://localhost:2602/AddProducts/${id}`)
+        axios.get(SOURCE_URL+`AddProducts/${id}`)
             .then((response) => {
                 // fetch all data from update
                 addcategoriename.current.value = response.data.addcategoriename;
@@ -63,7 +64,7 @@ export default function AdminUpdateProduct() {
             productdescriptions: productdescriptions.current.value
         }
 
-        axios.put(`http://localhost:2602/AddProducts/${id}`, update)
+        axios.put(SOURCE_URL+`AddProducts/${id}`, update)
             .then(() => {
                 swal("Product Update Successfully");
             })
@@ -73,7 +74,7 @@ export default function AdminUpdateProduct() {
     // FATCH SUB-CATEGORY FROM API
     const [allcategory, setAllCategory] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:2602/AddCategories")
+        axios.get(SOURCE_URL+"AddCategories")
             .then((response) => {
                 setAllCategory(response.data)
             });
@@ -82,7 +83,7 @@ export default function AdminUpdateProduct() {
     // FATCH SUB-CATEGORY FROM API
     const [addSubCategory, setAddSubCategory] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:2602/AddSubCategories")
+        axios.get(SOURCE_URL+"AddSubCategories")
             .then((response) => {
                 setAddSubCategory(response.data)
             });

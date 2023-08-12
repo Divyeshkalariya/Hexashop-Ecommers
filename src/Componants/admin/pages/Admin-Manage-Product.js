@@ -5,6 +5,7 @@ import AdminSidebar from '../Admin-Sidebar';
 import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function AdminManageProduct() {
 
@@ -13,7 +14,7 @@ export default function AdminManageProduct() {
   const Navigate = useNavigate();
 
   const displayproduct = () => {
-    axios.get("http://localhost:2602/AddProducts")
+    axios.get(SOURCE_URL+"AddProducts")
     .then((response) => {
       setProduct(response.data)
     });
@@ -26,7 +27,7 @@ export default function AdminManageProduct() {
 
   //DELET DATA FROM API
   const Deletproduct = (id) => {
-    axios.delete(`http://localhost:2602/AddProducts/${id}`)
+    axios.delete(SOURCE_URL+`AddProducts/${id}`)
       .then((res) => {
         console.warn(res)
         displayproduct();

@@ -3,6 +3,7 @@ import { Col, Container, Row} from 'react-bootstrap';
 import AdminFooter from './Admin-Footer';
 import axios from 'axios';
 import Chart from "react-apexcharts";
+import { SOURCE_URL } from '../../api/api';
 
 export default function AdminContent() {
 
@@ -11,7 +12,7 @@ export default function AdminContent() {
   // GET CONTACT LENGTH
   const [contact , setContact] = useState([])
   useEffect( () => {
-    axios.get("http://localhost:2602/Contactusdata")
+    axios.get(SOURCE_URL+"Contactusdata")
       .then((res)=>{
         setContact(res.data)
       })
@@ -19,7 +20,7 @@ export default function AdminContent() {
   // GET CUSTOMER LENGTH
   const [customer , setCustomer] = useState([])
   useEffect( () => {
-    axios.get("http://localhost:2602/Accountdata")
+    axios.get(SOURCE_URL+"Accountdata")
       .then((res)=>{
         setCustomer(res.data)
       })
@@ -27,7 +28,7 @@ export default function AdminContent() {
     // GET ORDER LENGTH
     const [order , setOrder] = useState([])
     useEffect( () => {
-      axios.get("http://localhost:2602/Cart")
+      axios.get(SOURCE_URL+"Cart")
         .then((res)=>{
           setOrder(res.data)
         })
@@ -35,7 +36,7 @@ export default function AdminContent() {
       // GET CATEGORY LENGTH
   const [category , setCategory] = useState([])
   useEffect( () => {
-    axios.get("http://localhost:2602/AddCategories")
+    axios.get(SOURCE_URL+"AddCategories")
       .then((res)=>{
         setCategory(res.data)
       })
@@ -43,7 +44,7 @@ export default function AdminContent() {
         // GET SUBCATEGORY LENGTH
         const [subcategory , setSubCategory] = useState([])
         useEffect( () => {
-          axios.get("http://localhost:2602/AddSubCategories")
+          axios.get(SOURCE_URL+"AddSubCategories")
             .then((res)=>{
               setSubCategory(res.data)
             })
@@ -51,7 +52,7 @@ export default function AdminContent() {
     // GET PRODUCTS LENGTH
     const [product , setProduct] = useState([])
     useEffect( () => {
-      axios.get("http://localhost:2602/AddProducts")
+      axios.get(SOURCE_URL+"AddProducts")
         .then((res)=>{
           setProduct(res.data)
         })

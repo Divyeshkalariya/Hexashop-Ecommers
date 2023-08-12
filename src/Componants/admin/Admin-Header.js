@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { Fragment,useState,useEffect } from 'react';
 import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import { SOURCE_URL } from '../../api/api';
 
 export default function AdminHeader() {
 
@@ -10,7 +11,7 @@ export default function AdminHeader() {
   const Navigate = useNavigate("");
 
   useEffect( () => {
-    axios.get("http://localhost:2602/Contactusdata")
+    axios.get(SOURCE_URL+"Contactusdata")
       .then((res)=>{
         setContact(res.data)
       })
@@ -62,4 +63,3 @@ export default function AdminHeader() {
     </Fragment>
   )
 }
-           

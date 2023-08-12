@@ -6,6 +6,7 @@ import AdminFooter from '../Admin-Footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
+import { SOURCE_URL } from '../../../api/api';
 
 export default function AdminManageCity() {
 
@@ -13,7 +14,7 @@ export default function AdminManageCity() {
     const Navigate = useNavigate();
   
     function displaycity() {
-      axios.get("http://localhost:2602/AddCity")
+      axios.get(SOURCE_URL+"AddCity")
       .then((response) => {
         setAddCity(response.data)
       });
@@ -27,7 +28,7 @@ export default function AdminManageCity() {
     // DELET DATA FROM API
     
     const DeletCity = (id) => {
-      axios.delete(`http://localhost:2602/AddCity/${id}`)
+      axios.delete(SOURCE_URL+`AddCity/${id}`)
         .then((response) => {
           console.warn(response)
           swal('City Delet Successfully')
