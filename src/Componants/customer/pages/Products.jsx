@@ -33,19 +33,30 @@ export default function Products() {
   // FATCH CATEGORY
   const [category, setCategory] = useState([]);
   const [filtercategoy, setFilterCategory] = useState([]);
+  const [productdetails , setProductDetails] = useState([]);
+
   useEffect(() => {
     axios.get(SOURCE_URL + 'AddCategories')
-      .then((res) => {
-        setCategory(res.data)
-      })
+    .then((res) => {
+      setCategory(res.data)
+    })
   }, [])
+
+  const productdetailsdata = () => {
+    axios.get(SOURCE_URL+"Product-Details")
+      .then((res) => {
+        setProductDetails(res.data)
+      })
+  }
+
 
   // ADD DATA IN PRODUCT-DETAILS API
   const details = (data) => {
-    axios.post(SOURCE_URL + "Product-Details", data)
+    axios.post(SOURCE_URL +"Product-Details", data)
       .then(
-        Navigate("/Product-Details")
-      )
+        Navigate("/Product-Details"),
+        )
+      productdetailsdata()
   }
 
 

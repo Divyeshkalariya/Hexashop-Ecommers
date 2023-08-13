@@ -9,45 +9,25 @@ import { SOURCE_URL } from '../../../api/api';
 export default function ProductDetails() {
 
     const [productdata, setProductData] = useState([]);
-    // const Navigate = useNavigate();
-    // const { id } = useParams();
-    // console.log(id, 'id', productdata)
 
-    // const getproductdata = async () => {
-    //     try {
-    //         const response = await fetch(`http://localhost:2602/AddProducts/${id}`);
-    //         setProductData(response.data);
-    //     }
-    //     catch (error) {
-    //         console.log(error)
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     getproductdata();
-    // }, [])
-
-    // if(!Object.keys(productdata.id).length > 0) return <div>Product Not Found</div>
-
-    useEffect(() => {
+    const productdetails = () => {
         axios.get(SOURCE_URL + "Product-Details")
             .then((response) => {
                 setProductData(response.data)
             });
+    }
+
+    useEffect(() => {
+        productdetails();
     }, []);
-
-
-    // DELET DATA FROM API WHEN USER REDIRECT TO ANY PAGE
-    // {
-    //     if(window.location = "/cart"){
-    //         return axios.delete("http://localhost:2602/Product-Details")
-    //     }
-    //     return axios.delete("http://localhost:2602/Product-Details")
-    // }
 
 
     // ADD PRODUCT IN CART
     const AddToCart = (data) => {
+        // if(productdata.productname === cart.productname){
+        //     Swal("Product alread added in cart")
+        // }
+        // else{
         axios.post(SOURCE_URL + "Cart", data)
             .then(() => {
                 Swal.fire({
@@ -56,13 +36,15 @@ export default function ProductDetails() {
                     text: 'Added To Cart',
                 })
             })
+        // }
     }
 
-    // ADD PRODUCT IN PRODUCT-DETAILS
-    const DeletProduct = (id) => {
+    // DELET DATA FROM API
+    function DeletProduct(id) {
         axios.delete(SOURCE_URL + `Product-Details/${id}`)
-            .then(() => {
-                window.location = "/Product-Details";
+            .then((response) => {
+                console.warn(response)
+                productdetails();
             })
     }
 

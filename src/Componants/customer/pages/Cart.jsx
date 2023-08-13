@@ -36,11 +36,15 @@ export default function Catr() {
   const [product, setProduct] = useState([]);
   const Navigate = useNavigate('');
 
-  useEffect(() => {
+  const cartdata = () => {
     axios.get(SOURCE_URL+'Cart')
       .then((res) => {
         setProduct(res.data)
       });
+  }
+
+  useEffect(() => {
+    cartdata();
   }, [])
 
 
@@ -58,7 +62,8 @@ export default function Catr() {
           progress: undefined,
           theme: "colored",
         });
-        window.location = "/cart";
+        Navigate("/Cart")
+        cartdata()
       })
   }
 

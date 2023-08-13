@@ -1518,31 +1518,31 @@ body {
 
 /* CONTACTUS PAGE STYLE START */
 @media only screen and (min-width:320px) and (max-width:480px) {
-    #contactus {
+    #contactuspage {
         padding: 5% !important;
     }
 
-    #contactus .map {
+    #contactuspage .map {
         height: 250px !important;
     }
 }
 
 @media only screen and (min-width:480px) and (max-width:576px) {
-    #contactus {
+    #contactuspage {
         padding: 5% !important;
     }
 
-    #contactus .map {
+    #contactuspage .map {
         height: 300px !important;
     }
 }
 
 @media only screen and (min-width:576px) and (max-width:768px) {
-    #contactus {
+    #contactuspage {
         padding: 5% !important;
     }
 
-    #contactus .map {
+    #contactuspage .map {
         height: 300px !important;
     }
 }

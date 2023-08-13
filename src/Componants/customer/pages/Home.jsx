@@ -55,13 +55,6 @@ export default function Home() {
   };
   window.addEventListener('scroll', toggleVisible);
 
-  // FATCH CATEGORY
-  const [category , setCategory] = useState([])
-  useEffect(() => {
-    axios.get(SOURCE_URL+"AddCategories")
-      .then(res => setCategory(res.data))
-  })
-
   return (
     <Fragment>
       {/* home section start */}

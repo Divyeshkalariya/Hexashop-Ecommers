@@ -68,7 +68,7 @@ export default function Contactus() {
       .then(() => {
         swal("Thank you for contact us our team contact you soon")
         setTimeout(() => {
-          window.location = '/Contactus';
+          Navigate('/Contactus');
         }, 1500);
       });
   }
@@ -77,10 +77,10 @@ export default function Contactus() {
     <Fragment>
 
       {/* pagebanner */}
-      <Pagebanner headline="Contact Us" />
+      <Pagebanner headline="Contact Us"/>
 
       {/* contact section */}
-      <Container id='contactus' className='py-4 py-md-5 py-lg-5'>
+      <Container id='contactuspage' className='py-4 py-md-5 py-lg-5'>
         <Row>
           <Col size={10} md={6} lg={6} className='mx-auto'>
             <iframe className='map pe-md-4 pe-lg-4' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d186883.22977430958!2d-80.120492!3d25.930036!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ad1877e4a82d%3A0xa891714787d1fb5e!2sNewport%20Fishing%20Pier!5e1!3m2!1sen!2sth!4v1686457618257!5m2!1sen!2sth" style={{ height: "100%", width: "100%" }}></iframe>
