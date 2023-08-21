@@ -44,7 +44,7 @@ export default function Contactus() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_zpolbgy', 'template_5kxyapw', form.current, '2czBnqoU8QGAfahoe')
+    emailjs.sendForm('service_dipiqbz', 'template_c9ruh0d', form.current, 'peCgprEsnxcNHSiTD')
       .then((result) => {
         console.log(result.text);
       }, (error) => {

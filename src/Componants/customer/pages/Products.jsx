@@ -22,7 +22,6 @@ export default function Products() {
   const [products, setProducts] = useState([])
   const Navigate = useNavigate('');
   // const { id } = useParams;
-
   useEffect(() => {
     axios.get(SOURCE_URL + 'AddProducts')
       .then((res) => {
@@ -34,7 +33,6 @@ export default function Products() {
   const [category, setCategory] = useState([]);
   const [filtercategoy, setFilterCategory] = useState([]);
   const [productdetails , setProductDetails] = useState([]);
-
   useEffect(() => {
     axios.get(SOURCE_URL + 'AddCategories')
     .then((res) => {

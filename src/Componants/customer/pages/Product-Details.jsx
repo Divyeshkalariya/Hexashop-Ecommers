@@ -9,7 +9,6 @@ import { SOURCE_URL } from '../../../api/api';
 export default function ProductDetails() {
 
     const [productdata, setProductData] = useState([]);
-
     const productdetails = () => {
         axios.get(SOURCE_URL + "Product-Details")
             .then((response) => {
@@ -21,13 +20,20 @@ export default function ProductDetails() {
         productdetails();
     }, []);
 
+    // const [cart , setCart] = useState([]);
+    // useEffect(() => {
+    //     axios.get(SOURCE_URL+"Cart")
+    //         .then((res) => {
+    //             setCart(res.data)
+    //         })
+    // })
 
     // ADD PRODUCT IN CART
     const AddToCart = (data) => {
-        // if(productdata.productname === cart.productname){
+        // if (productdata.id == cart.id) {
         //     Swal("Product alread added in cart")
         // }
-        // else{
+        // else {
         axios.post(SOURCE_URL + "Cart", data)
             .then(() => {
                 Swal.fire({
